@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -16,6 +16,7 @@ import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { environment } from '../environments/environment';
 import { PhonelistService } from './shared/phonelist.service';
+import { TextMaskModule } from 'angular2-text-mask';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,9 @@ import { PhonelistService } from './shared/phonelist.service';
     AppRoutingModule,
     ReactiveFormsModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),// adding the connecting details to firebase. 
-    AngularFireDatabaseModule // Importing the classes here as well for the module.
+    AngularFireDatabaseModule, // Importing the classes here as well for the module.
+    FormsModule,
+    TextMaskModule,
 
   ],
   providers: [PhonelistService],

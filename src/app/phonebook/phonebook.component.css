@@ -1,0 +1,18 @@
+/* div {
+	border: 1px solid red;
+} */
+
+#contentsection {
+	display: flex;
+	justify-content: space-around;
+}
+
+#phonebookheading {
+	color: orange;
+	font-weight: bold;
+}
+
+#formbackground {
+	background-color: lightgrey;
+	padding: 10px 10px 10px 10px;
+}

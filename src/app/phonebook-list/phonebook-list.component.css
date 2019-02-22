@@ -1,0 +1,23 @@
+/* div {
+	border: 1px solid red;
+} */
+
+.data {
+	padding-left: 10px;
+}
+.form-inline input {
+	background-color: grey;
+	color: white;
+}
+::placeholder {
+	color: white;
+}
+#filterbutton {
+	background-color: black;
+	color: white;
+}
+
+table {
+	background-color: black;
+	color: white;
+}

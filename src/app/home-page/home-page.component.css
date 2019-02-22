@@ -1,0 +1,10 @@
+#homepageheading {
+	text-align: center;
+}
+.jumbotron {
+	background-color: lightgrey;
+  	padding-top: 15px;
+  	padding-bottom: 30px;
+  	margin-bottom: 30px;
+  	color: inherit;
+}

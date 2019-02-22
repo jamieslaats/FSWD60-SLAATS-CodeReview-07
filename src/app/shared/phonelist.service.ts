@@ -14,7 +14,7 @@ export class PhonelistService {
   		$key: new FormControl(null),
   		firstName: new FormControl('', Validators.required),
   		lastName: new FormControl('', Validators.required),
-  		phoneNumber: new FormControl('', [Validators.required, Validators.minLength(8)]),
+  		phoneNumber: new FormControl('', [Validators.required, Validators.minLength(13)]),
   	});
 
   	getPhonebook(){

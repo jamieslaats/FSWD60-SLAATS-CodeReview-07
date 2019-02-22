@@ -1,0 +1,10 @@
+.navcolour li a {
+	color: white;
+	font-size: 1.5em;
+	font-weight: none;
+}
+
+#navstyling li a:hover {
+	background-color: lightgrey;
+	color: black;
+}

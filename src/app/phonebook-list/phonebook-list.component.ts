@@ -9,6 +9,7 @@ import { PhonelistService } from '../shared/phonelist.service';
 export class PhonebookListComponent implements OnInit {
 	phonebookArray = [];
 	showDeletedMessage : boolean;
+	searchText:string = "";
 
   constructor(private phonelistService: PhonelistService) { }
 
@@ -32,6 +33,7 @@ export class PhonebookListComponent implements OnInit {
        setTimeout(()=> this.showDeletedMessage=false, 2000);
        }
    }
+   filterCondition(phonebook){
+   return phonebook.firstName.toLowerCase().indexOf(this.searchText.toLowerCase()) != -1 || phonebook.lastName.toLowerCase().indexOf(this.searchText.toLowerCase()) != -1 ||  phonebook.phoneNumber.toLowerCase().indexOf(this.searchText.toLowerCase()) != -1  ;
 
-}
-
+}};

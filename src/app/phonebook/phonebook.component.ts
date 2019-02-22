@@ -12,6 +12,7 @@ export class PhonebookComponent implements OnInit {
  	submitted: boolean;
  	formControls = this.phonelistService.form.controls;
  	showSuccessMessage: boolean;
+  mask: any[] = ['+',/\d/,/\d/,' ',/[1-9]/,/\d/,/\d/,' ',/\d/,/\d/,/\d/,/\d/,' ',/\d/,/\d/,/\d/,/\d/,];
  
  ngOnInit() {
  }
