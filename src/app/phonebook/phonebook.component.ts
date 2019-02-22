@@ -19,15 +19,14 @@ export class PhonebookComponent implements OnInit {
  onSubmit(){
    this.submitted = true;
    if(this.phonelistService.form.valid){
-         if(this.phonelistService.form.get("$key").value == null ){
+         if(this.phonelistService.form.get("$key").value == null )
            this.phonelistService.insertPhoneNumber(this.phonelistService.form.value);
+           else
+            this.phonelistService.updatePhoneNumber(this.phonelistService.form.value);
            this.showSuccessMessage =true;// we set the property to true
        setTimeout(()=> this.showSuccessMessage=false,2000); // we used setTimeout here so after 3 second the showSuccessMessage value will be false
        this.submitted = false;
        this.phonelistService.form.reset();// the form will be empty after new record created
-         } else {
-                 //update
          }
    }
  }
-}

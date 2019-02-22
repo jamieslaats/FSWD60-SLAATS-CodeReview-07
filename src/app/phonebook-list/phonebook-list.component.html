@@ -11,8 +11,8 @@
                         <td>{{phonebook.lastName}}</td>
                         <td>{{phonebook.phoneNumber}}</td>
                         <td>
-                                <button class="btn btn-info">Edit</button>
-                                <button class="btn btn-danger">Delete</button>
+                                <button class="btn btn-info" (click)="phonelistService.populateForm(phonebook)">Edit</button>
+                                <button class="btn btn-danger" (click)="onDelete(phonebook.$key)">Delete</button>
                         </td>
                 </tr>
         </ng-container>

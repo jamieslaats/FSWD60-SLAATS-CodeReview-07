@@ -8,11 +8,12 @@ import { PhonelistService } from '../shared/phonelist.service';
 })
 export class PhonebookListComponent implements OnInit {
 	phonebookArray = [];
+	showDeletedMessage : boolean;
 
   constructor(private phonelistService: PhonelistService) { }
 
-  ngOnInit() {
-  	this.phonelistService.getPhonebook().subscribe(
+  	ngOnInit() {
+  		this.phonelistService.getPhonebook().subscribe(
   			(list) => {
   				this.phonebookArray = list.map( (item) => {
                                 return {
@@ -23,6 +24,14 @@ export class PhonebookListComponent implements OnInit {
                  });
 
 }
+
+	onDelete($key){
+     if(confirm("Are you sure you want to delete this record?")){
+       this.phonelistService.deleteContact($key);
+       this.showDeletedMessage = true;
+       setTimeout(()=> this.showDeletedMessage=false, 2000);
+       }
+   }
 
 }
 
