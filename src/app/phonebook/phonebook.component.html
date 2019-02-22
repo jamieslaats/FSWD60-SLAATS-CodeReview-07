@@ -1,3 +1,39 @@
-<p>
-  phonebook works!
-</p>
+<div class="row">
+  <div class="col-md-5">
+  	<h1>My Phone Book</h1>
+  	<h3>New Contact</h3>
+    <form [formGroup]="this.phonelistService.form" (ngSubmit)="onSubmit()">
+      <input type="hidden" formControlName="$key"><!-- this is a primary key for each record of the phonebook.-->
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <label>Fist Name</label>
+            <input formControlName="firstName" class="form-control" [ngClass]="{'is-invalid':submitted && formControls.firstName.errors}">
+            <div class="invalid-feedback" *ngIf="submitted && formControls.firstName.errors">Field Required</div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label>Last Name</label>
+            <input formControlName="lastName" class="form-control" [ngClass]="{'is-invalid':submitted && formControls.lastName.errors}">
+            <div class="invalid-feedback" *ngIf="submitted && formControls.lastName.errors">Field Required</div>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Phone Number</label>
+        <input formControlName="phoneNumber" class="form-control" [ngClass]="{'is-invalid':submitted && formControls.phoneNumber.errors}">
+        <div class="invalid-feedback" *ngIf="submitted && formControls.phoneNumber.errors">Field Required</div>
+      </div>
+      <div class="form-group">
+        <input type="submit" class="btn btn-primary" value="Submit">
+      </div>
+    </form>
+    <div class="alert alert-info" *ngIf="showSuccessMessage">
+        Submitted Successfully.
+</div>
+  </div>
+  <div class="col-md-6">
+    <phonebook-list></phonebook-list>
+  </div>
+</div>
