@@ -1,42 +1,58 @@
 <div id="contentsection" class="row">
-  <div class="col-md-5">
+  <!---BEGINNING OF THE INPUT COLUMN FOR PHONE NUMBERS DETAILS --->
+  <div class="col-md-5 col-sm-12 col-xs-12">
     <div>
       <h1 id="phonebookheading">My Phone Book</h1>
       <h3 id="columnheading">New Contact</h3>
+
+      <!---BEGINNING OF THE FORM INPUT --->
       <form id="formbackground" [formGroup]="this.phonelistService.form" (ngSubmit)="onSubmit()">
         <input type="hidden" formControlName="$key"><!-- this is a primary key for each record of the phonebook.-->
+        <!---START ROW FOR FIRST NAME AND LAST NAME--->
         <div class="row">
-          <div class="col-md-6">
+          <!---START of FIRST NAME COLUMN--->
+          <div class="col-md-6 col-sm-6">
             <div class="form-group">
               <label>Fist Name:</label>
               <input formControlName="firstName" class="form-control" [ngClass]="{'is-invalid':submitted && formControls.firstName.errors}">
               <div class="invalid-feedback" *ngIf="submitted && formControls.firstName.errors">Field Required</div>
             </div>
           </div>
-          <div class="col-md-6">
+          <!---START of LAST NAME COLUMN--->
+          <div class="col-md-6 col-sm-6">
             <div class="form-group">
               <label>Last Name:</label>
               <input formControlName="lastName" class="form-control" [ngClass]="{'is-invalid':submitted && formControls.lastName.errors}">
               <div class="invalid-feedback" *ngIf="submitted && formControls.lastName.errors">Field Required</div>
             </div>
           </div>
-        </div>
+        </div> <!---END of ROW FOR FIRST NAME AND LAST NAME--->
+        <!---START of PHONE NUMBER ROW within FIRST COLUMN--->
         <div class="form-group">
           <label>Phone Number:</label>
           <input formControlName="phoneNumber" class="form-control" type="tel" placeholder="+43 123 4567 8912" [textMask]="{mask: mask}" [ngClass]="{'is-invalid':submitted && formControls.phoneNumber.errors}">
           <div class="invalid-feedback" *ngIf="submitted && formControls.phoneNumber.errors">Field Required</div>
         </div>
+        <div class="form-group">
+          <!---START of Favourites ROW within FIRST COLUMN and DROP DOWN--->
+          <label>Favourite</label> <br>
+          <select formControlName="favourite" class="form-control">
+            <option value='**'><span class="fas fa-star">**</span></option>
+            <option value=""></option>
+          </select>
+          <!---FEEDBACK LOOPS OF FORMS BEING REQUIRED--->
+          <div class="invalid-feedback" *ngIf="submitted && formControls.status.errors">This field is required</div>
+        </div>
         <div class="form-group text-center">
           <input type="submit" class="btn btn-success" value="Add Contact">
         </div>
-      </form>
-      <div class="alert alert-info" *ngIf="showSuccessMessage">
-        Submitted Successfully.
-      </div>
+      </form> <!---END OF OVERALL FORM--->
+      <div class="alert alert-info" *ngIf="showSuccessMessage">Submitted Successfully</div>
       <div class="alert alert-danger" *ngIf="showDeletedMessage">Deleted Successfully</div>
     </div>
-  </div>
-  <div class="col-md-5">
+  </div> <!---FEEDBACK LOOPS OF FORMS BEING REQUIRED--->
+<!---BEGINNING OF THE DISPLAY COLUMN OF THE PHONE NUMBER TABLE DETAILS --->
+  <div class="col-md-5 col-sm-12 col-xs-12">
     <phonebook-list></phonebook-list>
   </div>
 </div>

@@ -1,0 +1,17 @@
+.phonebookimportant {
+	margin: 40px;
+}
+.phonebookimportant h2 {
+	color: orange;
+	font-weight: bold;
+}
+
+table {
+	background-color: darkgrey;
+	color: white;
+}
+th {
+	font-size: 1.3em;
+	background-color: black;
+	padding-left: 5px;
+}

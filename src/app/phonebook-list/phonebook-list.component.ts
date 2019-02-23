@@ -34,6 +34,5 @@ export class PhonebookListComponent implements OnInit {
        }
    }
    filterCondition(phonebook){
-   return phonebook.firstName.toLowerCase().indexOf(this.searchText.toLowerCase()) != -1 || phonebook.lastName.toLowerCase().indexOf(this.searchText.toLowerCase()) != -1 ||  phonebook.phoneNumber.toLowerCase().indexOf(this.searchText.toLowerCase()) != -1  ;
-
+   return phonebook.firstName.toLowerCase().indexOf(this.searchText.toLowerCase()) != -1 || phonebook.lastName.toLowerCase().indexOf(this.searchText.toLowerCase()) != -1 ||  phonebook.phoneNumber.toLowerCase().indexOf(this.searchText.toLowerCase()) != -1;
 }};

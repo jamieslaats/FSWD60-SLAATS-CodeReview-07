@@ -1,3 +1,18 @@
-<p>
-  important-numbers works!
-</p>
+<div class="phonebookimportant">
+   <h2>Important Contacts</h2>
+  <br>
+  <table id="contactsdatafavourites" class="table table-sm">
+    <thead>
+    	<th colspan="" rowspan="" headers="" scope="">Favourite</th>
+    	<th colspan="" rowspan="" headers="" scope="">First & Last Name</th>
+    	<th colspan="" rowspan="" headers="" scope="">Phone Number</th>
+    </thead>
+    <ng-container *ngFor="let phonebook of phonebookArray">
+      <tr>
+        <td>{{phonebook.favourite}}</td>
+        <td>{{phonebook.firstName}} {{phonebook.lastName}}</td>
+        <td>{{phonebook.phoneNumber}}</td>
+      </tr>
+    </ng-container>
+  </table>
+</div>

@@ -11,6 +11,7 @@
     </thead>
     <ng-container *ngFor="let phonebook of phonebookArray">
       <tr *ngIf="filterCondition(phonebook)">
+        <td>{{phonebook.favourite}}</td>
         <td>{{phonebook.firstName}} {{phonebook.lastName}}</td>
         <td>{{phonebook.phoneNumber}}</td>
         <td>

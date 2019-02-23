@@ -15,6 +15,7 @@ export class PhonelistService {
   		firstName: new FormControl('', Validators.required),
   		lastName: new FormControl('', Validators.required),
   		phoneNumber: new FormControl('', [Validators.required, Validators.minLength(13)]),
+      favourite: new FormControl(''),
   	});
 
   	getPhonebook(){
@@ -27,6 +28,7 @@ export class PhonelistService {
   			firstName: phonebook.firstName,
   			lastName: phonebook.lastName,
   			phoneNumber: phonebook.phoneNumber,
+        favourite: phonebook.favourite
   		});
   	}
     populateForm(phonebook){
@@ -37,6 +39,7 @@ export class PhonelistService {
         firstName: phonebook.firstName,
         lastName: phonebook.lastName,
         phoneNumber: phonebook.phoneNumber,
+        favourite: phonebook.favourite,
       });
   }
     deleteContact($key: string){
