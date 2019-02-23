@@ -12,10 +12,11 @@ export class PhonelistService {
   	
   	form = new FormGroup({
   		$key: new FormControl(null),
+      favourite: new FormControl(''),
   		firstName: new FormControl('', Validators.required),
   		lastName: new FormControl('', Validators.required),
   		phoneNumber: new FormControl('', [Validators.required, Validators.minLength(13)]),
-      favourite: new FormControl(''),
+      
   	});
 
   	getPhonebook(){
@@ -25,10 +26,11 @@ export class PhonelistService {
 
   	insertPhoneNumber(phonebook){
   		this.phonebookList.push({
-  			firstName: phonebook.firstName,
+  			favourite: phonebook.favourite,
+        firstName: phonebook.firstName,
   			lastName: phonebook.lastName,
   			phoneNumber: phonebook.phoneNumber,
-        favourite: phonebook.favourite
+        
   		});
   	}
     populateForm(phonebook){
@@ -36,10 +38,11 @@ export class PhonelistService {
   }
     updatePhoneNumber(phonebook){
       this.phonebookList.update(phonebook.$key,{
+        favourite: phonebook.favourite,
         firstName: phonebook.firstName,
         lastName: phonebook.lastName,
         phoneNumber: phonebook.phoneNumber,
-        favourite: phonebook.favourite,
+        
       });
   }
     deleteContact($key: string){
