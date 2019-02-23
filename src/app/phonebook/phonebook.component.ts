@@ -8,7 +8,7 @@ import { PhonelistService } from '../shared/phonelist.service';
 })
 export class PhonebookComponent implements OnInit {
 
-  constructor(private phonelistService: PhonelistService) { }
+  constructor(public phonelistService: PhonelistService) { }
  	submitted: boolean;
  	formControls = this.phonelistService.form.controls;
  	showSuccessMessage: boolean;

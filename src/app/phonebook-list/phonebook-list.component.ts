@@ -11,7 +11,7 @@ export class PhonebookListComponent implements OnInit {
 	showDeletedMessage : boolean;
 	searchText:string = "";
 
-  constructor(private phonelistService: PhonelistService) { }
+  constructor(public phonelistService: PhonelistService) { }
 
   	ngOnInit() {
   		this.phonelistService.getPhonebook().subscribe(

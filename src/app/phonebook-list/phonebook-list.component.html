@@ -19,6 +19,7 @@
           <button class="btn btn-danger" (click)="onDelete(phonebook.$key)"><i id="delete" class="fas fa-trash-alt"></i></button>
         </td>
       </tr>
+      <div class="alert alert-danger" *ngIf="showDeletedMessage">Deleted Successfully</div>
     </ng-container>
   </table>
 </div>

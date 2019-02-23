@@ -8,7 +8,7 @@ import { PhonelistService } from '../shared/phonelist.service';
 })
 export class ImportantNumbersComponent implements OnInit {
 	phonebookArray = [];
-   constructor(private phonelistService: PhonelistService) { }
+   constructor(public phonelistService: PhonelistService) { }
 
   	ngOnInit() {
   		this.phonelistService.getPhonebook().subscribe(
